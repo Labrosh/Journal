@@ -1,0 +1,35 @@
+name: Build EXE for Windows
+
+on:
+  push:
+    tags:
+      - 'v*'  # Triggers only when you push a version tag like v1.0
+  workflow_dispatch:  # Allows manual runs from GitHub interface
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install pyinstaller
+
+    - name: Build with PyInstaller
+      run: |
+        pyinstaller --onefile --noconsole cultivation_journal.py
+
+    - name: Upload .exe to release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: dist/cultivation_journal.exe
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
