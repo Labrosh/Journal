@@ -25,12 +25,35 @@ Cultivation Journal is a tkinter-based application designed to help you document
 
 ## Usage
 
-1. Run the application: `python cultivation_journal.py`
+1. Run the application: `python cultivation_journal.py` *(or double-click the .exe if on Windows)*
 2. Fill in your character details across the different tabs
 3. Use keyboard shortcuts for common actions:
-   - **Ctrl+S**: Save your journal
+   - **Ctrl+S**: Save your journal (suggests a file name based on character name if new)
    - **Ctrl+O**: Open an existing journal
-   - **Ctrl+N**: Create a new journal
+   - **Ctrl+N**: Create a new journal (clears fields)
+   - **Ctrl+Shift+S**: Save As – choose a custom filename or overwrite another journal
+
+📝 Your journal is saved in a `.json` file which includes everything—your notes, cultivation state, AI prompt, and even last window size.
+
+## Windows Users – Download the .exe
+
+If you don't have Python installed or just want to run the app easily:
+
+1. Go to the [Releases](https://github.com/Labrosh/Journal/releases/) tab on GitHub.
+2. Download the latest file named `cultivation_journal.exe`.
+3. Double-click the `.exe` to launch the Cultivation Journal — no Python needed!
+
+📝 **Important**: Your journal will be saved as a `.json` file next to the `.exe` when you use the Save function. The first time you save, you'll be prompted to choose a filename.
+
+⚠️ **Antivirus Warning**: Windows Defender or other antivirus software might flag the .exe as unknown. This is common for unsigned personal apps. Click "More Info" > "Run Anyway" to proceed if you trust the file.
+
+## Additional Tips
+
+- The **File** menu provides options for file operations including "Save As..." (Ctrl+Shift+S)
+- Use **Settings** menu to change themes or edit your AI prompt
+- Text formatting options (bold and italic) are available by selecting text and using the format buttons
+- The status bar at the bottom displays your last save time and other helpful information
+- Window size and position are remembered when you save your journal
 
 ## Requirements
 
@@ -61,6 +84,9 @@ The journal is organized into several tabs:
 - **Inventory**: Items and resources your character possesses
 - **Quests & Goals**: Current objectives and rumors
 - **Session Journal**: Notes from your gaming sessions
+- **AI Prompt**: A customizable field used to guide AI assistants like ChatGPT with immersive storytelling instructions
+
+🧠 Tip: The journal file remembers your last used file path, and filenames can be personalized—great for keeping multiple characters or campaigns!
 
 ## Using with AI Assistants (ChatGPT)
 
